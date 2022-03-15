@@ -1,6 +1,7 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import math
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -29,6 +30,17 @@ def tour_size():
     """
     Requests tournament size and type from the user and generates the bracket
     """
-    num_teams = input("Enter the number of teams taking part in the tournament: \n")
-    
+    num_teams = [4,8,16]
+    input_num_teams = int(input("Enter the number of teams taking part in the tournament (4/8/16): \n"))
+    if input_num_teams in num_teams:
+        print(input_num_teams)
+    else:
+        print("Tournament size must be 4,8 or 16")
+
 tour_size()
+
+def tour_typ():
+    print("Choose type of torunament to create\n")
+    print("Your options are \n1. Single Elimination \n2. Double Elimination \n3. Round Robin \n4. Round Robin Split")
+
+tour_typ()
