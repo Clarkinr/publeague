@@ -15,8 +15,12 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('tournament_tracker')
 
-teams = SHEET.worksheet('Sheet1')
+def new_tournament():
+    """
+    Creates a new spreadsheet which will contain team and game information
+    """
+    print("What is the name of this torunament\n")
+    tour_name = input("Tournament Name: \n")
+    print(f'Your tournament has been named {tour_name}')
 
-data = teams.get_all_values()
-
-print(data)
+new_tournament()
