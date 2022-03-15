@@ -21,6 +21,14 @@ def new_tournament():
     """
     print("What is the name of this torunament\n")
     tour_name = input("Tournament Name: \n")
-    print(f'Your tournament has been named {tour_name}')
+    print(f'Your tournament has been named {tour_name}\n')
 
 new_tournament()
+
+def tour_size():
+    """
+    Requests tournament size and type from the user and generates the bracket
+    """
+    num_teams = input("Enter the number of teams taking part in the tournament: \n")
+    
+tour_size()
