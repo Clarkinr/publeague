@@ -14,3 +14,9 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('tournament_tracker')
+
+teams = SHEET.worksheet('Sheet1')
+
+data = teams.get_all_values()
+
+print(data)
